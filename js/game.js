@@ -57,16 +57,8 @@ class Game {
             fill("black");
             textSize(25);
             text(allPlayers[plr].name, x-25, y+25);
-        }
-
-        if(index === 2) {
-            textFont(antonFont);
-            fill("white");
-            textSize(36);
-            text("Player 1: " + players[index-2].score, 40, 50);
-            text("Player 2: " + players[index-1].score, 40, 100);
         }    
-    }    
+    }
 
     if (keyIsDown(RIGHT_ARROW) && player.index !== null) {
         player.distance -= 10;
