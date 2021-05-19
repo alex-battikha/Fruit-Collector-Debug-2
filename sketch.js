@@ -50,3 +50,11 @@ function draw() {
     game.end();
   }
 }
+
+function keyPressed() {
+  console.log("Hello");
+  if(keyCode === 32) {
+    //console.log("Hello2");
+    form.keyStart();
+  }
+}

@@ -58,6 +58,27 @@ class Game {
             fill("black");
             textSize(25);
             text(allPlayers[plr].name, x-25, y+25);
+
+            if (player.index !== null) {
+                //fill code here, to destroy the objects. (Use the one in the class project 40)
+                // add the condition to calculate the score. 
+                //and use update() to update the values in the database.
+    
+                for(var p = 0; p < fruitGroup.length; p++) {
+                    console.log(players[index-1]);
+                    if(fruitGroup[p].isTouching(players[index-1])) {
+                        fruitGroup[p].destroy();
+                        player.score+=1;
+                        player.update();
+                    }
+                }
+                //OLD CODE - DOES NOT WORK
+                // if (fruitGroup.isTouching(player)) {
+                //     fruitGroup.remove();
+                //     player.score+=1;
+                //     player.update();
+                // }
+            }
         }
 
         textFont(antonFont);
@@ -109,26 +130,7 @@ class Game {
         fruitGroup.add(fruits);
         
     }
-        
-        if (player.index !== null) {
-            //fill code here, to destroy the objects. (Use the one in the class project 40)
-            // add the condition to calculate the score. 
-            //and use update() to update the values in the database.
-            for(var p = 0; p < fruitGroup.length; p++) {
-                if(fruitGroup[p].isTouching(players)) {
-                    fruitGroup[p].destroy();
-                    player.score+=1;
-                    player.update();
-                }
-            }
-            //OLD CODE - DOES NOT WORK
-            // if (fruitGroup.isTouching(player)) {
-            //     fruitGroup.remove();
-            //     player.score+=1;
-            //     player.update();
-            // }
-        }
-    }
+}
 
     end(){
        console.log("Game Ended");
